@@ -1,0 +1,22 @@
+{
+	"name": "CosmosDB-DocAPI",
+	"version": "0.0.1",
+	"versionDate": "2017-05-20",
+	"author": "hackolade",
+	"engines": {
+		"hackolade": "1.6.x",
+		"hackoladePlugin": "1.0.0"
+	},
+	"contributes": {
+		"target": {
+			"applicationTarget": "COSMOSDB-DOC",
+			"title": "CosmosDB with DocDB API",
+			"versions": [
+			]
+		},
+		"features": {
+			"nestedCollections": false
+		}
+	},
+	"description": "Hackolade plugin for Azure CosmosDB with DocumentDB API"
+}
