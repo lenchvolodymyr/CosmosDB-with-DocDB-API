@@ -36,6 +36,18 @@
 				"fieldType": "details",
 				"template": "textarea"
 			},
+						{
+				"fieldName": "Primary Key",
+				"fieldKeyword": "PK",
+				"shouldValidate": false,
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Document Type",
+				"fieldKeyword": "DocType",
+				"shouldValidate": false,
+				"fieldType": "text"
+			},
 			{
 				"fieldName": "Comments",
 				"fieldKeyword": "comments",
@@ -46,5 +58,26 @@
 			}
 		],
 		"containerLevelKeys": []
+	},
+	{
+		"modeName": "Indexes",
+		"structure": [
+			{
+				"fieldName": "Description",
+				"fieldKeyword": "indexDescription",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "indexComments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea"
+			}
+		]
 	}
 ]

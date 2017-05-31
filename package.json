@@ -1,6 +1,6 @@
 {
-	"name": "CosmosDB-DocAPI",
-	"version": "0.0.1",
+	"name": "CosmosDB with DocDB API",
+	"version": "0.0.2",
 	"versionDate": "2017-05-20",
 	"author": "hackolade",
 	"engines": {
@@ -10,7 +10,7 @@
 	"contributes": {
 		"target": {
 			"applicationTarget": "COSMOSDB-DOC",
-			"title": "CosmosDB with DocDB API",
+			"title": "CosmosDB w/ DocDB API",
 			"versions": [
 			]
 		},
