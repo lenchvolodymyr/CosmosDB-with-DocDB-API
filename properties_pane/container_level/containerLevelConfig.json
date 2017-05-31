@@ -1,0 +1,50 @@
+[
+	{
+		"modeName": "Details",
+		"structure": [
+			{
+				"fieldName": "Database ID",
+				"fieldKeyword": "dbId",
+				"shouldValidate": false,
+				"fieldTooltip": "A database is a logical container of one or more collections",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Storage Capacity",
+				"fieldKeyword": "storageCapacity",
+				"shouldValidate": false,
+				"fieldTooltip": "A database is a logical container of one or more collections",
+				"fieldType": "select",
+				"options": [
+					"Fixed (10GB)",
+					"Unlimited"
+				]
+			},
+			{
+				"fieldName": "Throughput (RU/s)",
+				"fieldKeyword": "throughput",
+				"shouldValidate": false,
+				"fieldTooltip": "Each collection can be provisionned throughput in Request Units (RU) per second. 1 RU coresponds to the throughput of a read of a 1 KB document.",
+				"fieldType": "text",
+				"labelOffset": 50
+			},
+			{
+				"fieldName": "Description",
+				"fieldKeyword": "description",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "comments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea"
+			}
+		],
+		"containerLevelKeys": []
+	}
+]
