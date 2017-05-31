@@ -3,13 +3,6 @@
 		"modeName": "Details",
 		"structure": [
 			{
-				"fieldName": "Database ID",
-				"fieldKeyword": "dbId",
-				"shouldValidate": false,
-				"fieldTooltip": "A database is a logical container of one or more collections",
-				"fieldType": "text"
-			},
-			{
 				"fieldName": "Storage Capacity",
 				"fieldKeyword": "storageCapacity",
 				"shouldValidate": false,
@@ -29,6 +22,17 @@
 				"labelOffset": 50
 			},
 			{
+				"fieldName": "RU per minute",
+				"fieldKeyword": "rump",
+				"shouldValidate": false,
+				"fieldTooltip": "For each 100 RU per second provisioned, 1000 RU per minute can be provisioned.",
+				"fieldType": "select",
+				"options": [
+					"OFF",
+					"On"
+				]
+			},
+			{
 				"fieldName": "Description",
 				"fieldKeyword": "description",
 				"shouldValidate": false,
@@ -38,14 +42,23 @@
 			},
 						{
 				"fieldName": "Primary Key",
-				"fieldKeyword": "PK",
+				"fieldKeyword": "primaryKey",
 				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Partition key",
+				"fieldKeyword": "partitionKey",
+				"shouldValidate": false,
+				"fieldTooltip": "The Partition Key is used to automatically partition data among multiple servers for scalability.  Choose a JSON property name that has a wide range of values and is likely to have evenly distributed access patterns.",
 				"fieldType": "text"
 			},
 			{
 				"fieldName": "Document Type",
-				"fieldKeyword": "DocType",
+				"fieldKeyword": "docType",
 				"shouldValidate": false,
+				"fieldTooltip": "description",
 				"fieldType": "text"
 			},
 			{
@@ -63,13 +76,6 @@
 		"modeName": "Indexes",
 		"structure": [
 			{
-				"fieldName": "Name",
-				"fieldKeyword": "indexID",
-				"shouldValidate": false,
-				"fieldTooltip": "Index unique name",
-				"fieldType": "text"
-			},
-			{
 				"fieldName": "Description",
 				"fieldKeyword": "indexDescription",
 				"shouldValidate": false,
@@ -78,22 +84,76 @@
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Kind",
-				"fieldKeyword": "dbId",
+				"fieldName": "Automatic",
+				"fieldKeyword": "automatic",
 				"shouldValidate": false,
-				"fieldTooltip": "Kind of index: hash or range",
+				"fieldTooltip": "Indexing mode: consistent, lazy, or none",
+				"fieldType": "select",
+				"options": [
+					"true",
+					"false"
+				]
+			},
+			{
+				"fieldName": "Mode",
+				"fieldKeyword": "mode",
+				"shouldValidate": false,
+				"fieldTooltip": "Indexing mode: consistent, lazy, or none",
+				"fieldType": "select",
+				"options": [
+					"Consistent",
+					"Lazy",
+					"None"
+				]
+			},
+			{
+				"fieldName": "Included path",
+				"fieldKeyword": "indexIncludedPath",
+				"shouldValidate": false,
+				"fieldTooltip": "Included path index expression",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Kind",
+				"fieldKeyword": "kind",
+				"shouldValidate": false,
+				"fieldTooltip": "Index kind: Hash (equality queries), Range (equality, range or Order By queries), or Spatial (spatial queries)",
 				"fieldType": "select",
 				"options": [
 					"Hash",
-					"Range"
+					"Range",
+					"Spatial"
+				]
+			},
+			{
+				"fieldName": "Data type",
+				"fieldKeyword": "dataType",
+				"shouldValidate": false,
+				"fieldTooltip": "Data type: String, Number, Point, Polygon, or LineString (can contain only one entry per data type per path)",
+				"fieldType": "select",
+				"options": [
+					"String",
+					"Number",
+					"Point",
+					"Polygon",
+					"LineString"
 				]
 			},
 			{
 				"fieldName": "Precision",
 				"fieldKeyword": "indexPrecision",
 				"shouldValidate": false,
-				"fieldTooltip": "Precision number 1 thru 3",
+				"fieldTooltip": "1-8 or -1 (Maximum precision) for numbers, 1-100 (Maximum precision) for string",
 				"fieldType": "text"
+			},
+			{
+				"fieldName": "Excluded path",
+				"fieldKeyword": "indexExcludedPath",
+				"shouldValidate": false,
+				"fieldTooltip": "Excluded path index expression",
+				"fieldType": "details",
+				"template": "textarea"
 			},
 			{
 				"fieldName": "Comments",

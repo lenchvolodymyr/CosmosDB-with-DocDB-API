@@ -14,13 +14,66 @@
 				"disabledOption": true
 			},
 			{
-				"fieldName": "DB version",
-				"fieldKeyword": "dbVersion",
+				"fieldName": "Tenant",
+				"fieldKeyword": "tenant",
 				"shouldValidate": false,
-				"fieldTooltip": "db version",
+				"fieldTooltip": "Azure tenant",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Account ID",
+				"fieldKeyword": "accountID",
+				"shouldValidate": false,
+				"fieldTooltip": "Azure CosmosDB account ID",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Resource group",
+				"fieldKeyword": "resGrp",
+				"shouldValidate": false,
+				"fieldTooltip": "Resource Group",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Subscription",
+				"fieldKeyword": "subscription",
+				"shouldValidate": false,
+				"fieldTooltip": "Subscription",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Database ID",
+				"fieldKeyword": "dbId",
+				"shouldValidate": false,
+				"fieldTooltip": "A database is a logical container of one or more collections",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "API Experience",
+				"fieldKeyword": "apiExperience",
+				"shouldValidate": false,
+				"fieldTooltip": "Default experience",
 				"fieldType": "select",
 				"options": [
-				]
+					"DocumentDB SQL",
+					"MongoDB"
+				],
+				"disabledOption": false
+			},
+			{
+				"fieldName": "Default consistency policy",
+				"fieldKeyword": "defaultConsistency",
+				"shouldValidate": false,
+				"fieldTooltip": "Default consistency policy level",
+				"fieldType": "select",
+				"options": [
+					"Session",
+					"Strong",
+					"Bounded staleness",
+					"Consistent prefix",
+					"Eventual"
+				],
+				"disabledOption": false
 			},
 			{
 				"fieldName": "Comments",
