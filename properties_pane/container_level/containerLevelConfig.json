@@ -63,6 +63,13 @@
 		"modeName": "Indexes",
 		"structure": [
 			{
+				"fieldName": "Name",
+				"fieldKeyword": "indexID",
+				"shouldValidate": false,
+				"fieldTooltip": "Index unique name",
+				"fieldType": "text"
+			},
+			{
 				"fieldName": "Description",
 				"fieldKeyword": "indexDescription",
 				"shouldValidate": false,
@@ -71,8 +78,145 @@
 				"template": "textarea"
 			},
 			{
+				"fieldName": "Kind",
+				"fieldKeyword": "dbId",
+				"shouldValidate": false,
+				"fieldTooltip": "Kind of index: hash or range",
+				"fieldType": "select",
+				"options": [
+					"Hash",
+					"Range"
+				]
+			},
+			{
+				"fieldName": "Precision",
+				"fieldKeyword": "IndexPrecision",
+				"shouldValidate": false,
+				"fieldTooltip": "Precision number 1 thru 3",
+				"fieldType": "text"
+			},
+			{
 				"fieldName": "Comments",
 				"fieldKeyword": "indexComments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea"
+			}
+		]
+	},
+	{
+		"modeName": "Stored Procs",
+		"structure": [
+			{
+				"fieldName": "Id",
+				"fieldKeyword": "storedProcID",
+				"shouldValidate": false,
+				"fieldTooltip": "Stored procedure unique name",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Description",
+				"fieldKeyword": "storedProcDescription",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Function",
+				"fieldKeyword": "storedProcFunction",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "storedProcComments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea"
+			}
+		]
+	},
+	{
+		"modeName": "Triggers",
+		"structure": [
+			{
+				"fieldName": "Id",
+				"fieldKeyword": "triggerID",
+				"shouldValidate": false,
+				"fieldTooltip": "Stored procedure unique name",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Description",
+				"fieldKeyword": "triggerDescription",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Function",
+				"fieldKeyword": "triggerFunction",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Pre/Post",
+				"fieldKeyword": "prePostTrigger",
+				"shouldValidate": false,
+				"fieldTooltip": "Choose whether pre- or post-trigger",
+				"fieldType": "select",
+				"options": [
+					"Pre-Trigger",
+					"Post-Trigger"
+				]
+			},
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "triggerComments",
+				"shouldValidate": false,
+				"fieldTooltip": "comments",
+				"fieldType": "details",
+				"template": "textarea"
+			}
+		]
+	},
+	{
+		"modeName": "UDFs",
+		"structure": [
+			{
+				"fieldName": "Id",
+				"fieldKeyword": "udfID",
+				"shouldValidate": false,
+				"fieldTooltip": "Stored procedure unique name",
+				"fieldType": "text"
+			},
+			{
+				"fieldName": "Description",
+				"fieldKeyword": "udfDescription",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Function",
+				"fieldKeyword": "udfFunction",
+				"shouldValidate": false,
+				"fieldTooltip": "description",
+				"fieldType": "details",
+				"template": "textarea"
+			},
+			{
+				"fieldName": "Comments",
+				"fieldKeyword": "udfComments",
 				"shouldValidate": false,
 				"fieldTooltip": "comments",
 				"fieldType": "details",

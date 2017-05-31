@@ -1,6 +1,6 @@
 {
 	"name": "CosmosDB with DocDB API",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"versionDate": "2017-05-20",
 	"author": "hackolade",
 	"engines": {
