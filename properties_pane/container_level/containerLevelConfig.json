@@ -90,7 +90,7 @@
 			},
 			{
 				"fieldName": "Precision",
-				"fieldKeyword": "IndexPrecision",
+				"fieldKeyword": "indexPrecision",
 				"shouldValidate": false,
 				"fieldTooltip": "Precision number 1 thru 3",
 				"fieldType": "text"
