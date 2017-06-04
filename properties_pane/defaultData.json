@@ -1,8 +1,8 @@
 {
 	"model": {
-		"databaseName": "New model",
+		"modelName": "New model",
 		"dbVersion": "",
-		"dbVendor": "CosmosDB w/ DocDB API"
+		"dbVendor": "CosmosDB"
 	},
 	"container": {
 		"name": "New collection",

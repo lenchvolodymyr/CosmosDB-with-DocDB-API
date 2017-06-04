@@ -10,13 +10,6 @@
 				"fieldType": "details",
 				"template": "textarea",
 				"valueType": "string"
-			},
-			{
-				"fieldName": "Label",
-				"fieldKeyword": "label",
-				"shouldValidate": false,
-				"fieldType": "text",
-				"valueType": "string"
 			}
 		]
 	}

@@ -16,10 +16,11 @@
 			{
 				"fieldName": "Throughput (RU/s)",
 				"fieldKeyword": "throughput",
-				"shouldValidate": false,
+				"shouldValidate": true,
 				"fieldTooltip": "Each collection can be provisionned throughput in Request Units (RU) per second. 1 RU coresponds to the throughput of a read of a 1 KB document.",
 				"fieldType": "text",
-				"labelOffset": 50
+				"labelOffset": 50,
+				"valueType": "number"
 			},
 			{
 				"fieldName": "RU per minute",
@@ -40,26 +41,54 @@
 				"fieldType": "details",
 				"template": "textarea"
 			},
-						{
-				"fieldName": "Primary Key",
-				"fieldKeyword": "primaryKey",
-				"shouldValidate": false,
+			{
+				"fieldName": "Document key",
+				"fieldKeyword": "documentID",
+				"shouldValidate": true,
 				"fieldTooltip": "description",
-				"fieldType": "text"
+				"fieldType": "text",
+				"fieldDefault": "id",
+				"valueType": "string"
+			},
+			{
+				"fieldName": "Key type",
+				"fieldKeyword": "keyType",
+				"shouldValidate": false,
+				"fieldTooltip": "Data type of the primary document key",
+				"fieldType": "select",
+				"options": [
+					"string",
+					"number",
+					"bool"
+				]
+			},
+			{
+				"fieldName": "Document kind",
+				"fieldKeyword": "docKind",
+				"shouldValidate": true,
+				"fieldTooltip": "When storing multiple kinds of documents in same collection, this field helps distinguish them.",
+				"fieldType": "text",
+				"valueType": "string"
+			},
+			{
+				"fieldName": "Type",
+				"fieldKeyword": "docKindType",
+				"shouldValidate": false,
+				"fieldTooltip": "Data type of the document kind key",
+				"fieldType": "select",
+				"options": [
+					"string",
+					"number",
+					"bool"
+				]
 			},
 			{
 				"fieldName": "Partition key",
 				"fieldKeyword": "partitionKey",
-				"shouldValidate": false,
-				"fieldTooltip": "The Partition Key is used to automatically partition data among multiple servers for scalability.  Choose a JSON property name that has a wide range of values and is likely to have evenly distributed access patterns.",
-				"fieldType": "text"
-			},
-			{
-				"fieldName": "Document Type",
-				"fieldKeyword": "docType",
-				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "text"
+				"shouldValidate": true,
+				"fieldTooltip": "The Partition Key is a string only used to automatically partition data among multiple servers for scalability.  Choose a JSON property name that has a wide range of values and is likely to have evenly distributed access patterns.",
+				"fieldType": "text",
+				"valueType": "string"
 			},
 			{
 				"fieldName": "Comments",
@@ -70,7 +99,10 @@
 				"template": "textarea"
 			}
 		],
-		"containerLevelKeys": []
+		"containerLevelKeys": [
+			"documentID",
+			"docType"
+		]
 	},
 	{
 		"modeName": "Indexes",
