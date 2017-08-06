@@ -1,61 +1,61 @@
 [
 	{
-		"modeName": "Details",
+		"lowerTab": "Details",
 		"structure": [
 			{
-				"fieldName": "Storage Capacity",
-				"fieldKeyword": "storageCapacity",
+				"propertyName": "Storage Capacity",
+				"propertyKeyword": "storageCapacity",
 				"shouldValidate": false,
-				"fieldTooltip": "A database is a logical container of one or more collections",
-				"fieldType": "select",
+				"propertyTooltip": "A database is a logical container of one or more collections",
+				"propertyType": "select",
 				"options": [
 					"Fixed (10GB)",
 					"Unlimited"
 				]
 			},
 			{
-				"fieldName": "Throughput (RU/s)",
-				"fieldKeyword": "throughput",
+				"propertyName": "Throughput (RU/s)",
+				"propertyKeyword": "throughput",
 				"shouldValidate": true,
-				"fieldTooltip": "Each collection can be provisionned throughput in Request Units (RU) per second. 1 RU coresponds to the throughput of a read of a 1 KB document.",
-				"fieldType": "text",
+				"propertyTooltip": "Each collection can be provisionned throughput in Request Units (RU) per second. 1 RU coresponds to the throughput of a read of a 1 KB document.",
+				"propertyType": "text",
 				"labelOffset": 50,
 				"valueType": "number"
 			},
 			{
-				"fieldName": "RU per minute",
-				"fieldKeyword": "rump",
+				"propertyName": "RU per minute",
+				"propertyKeyword": "rump",
 				"shouldValidate": false,
-				"fieldTooltip": "For each 100 RU per second provisioned, 1000 RU per minute can be provisioned.",
-				"fieldType": "select",
+				"propertyTooltip": "For each 100 RU per second provisioned, 1000 RU per minute can be provisioned.",
+				"propertyType": "select",
 				"options": [
 					"OFF",
 					"On"
 				]
 			},
 			{
-				"fieldName": "Description",
-				"fieldKeyword": "description",
+				"propertyName": "Description",
+				"propertyKeyword": "description",
 				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
+				"propertyTooltip": "description",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Document key",
-				"fieldKeyword": "documentID",
+				"propertyName": "Document key",
+				"propertyKeyword": "documentID",
 				"shouldValidate": true,
-				"fieldTooltip": "description",
-				"fieldType": "text",
+				"propertyTooltip": "description",
+				"propertyType": "text",
 				"fieldDefault": "id",
 				"valueType": "string"
 			},
 			{
-				"fieldName": "Key type",
-				"fieldKeyword": "keyType",
+				"propertyName": "Key type",
+				"propertyKeyword": "keyType",
 				"shouldValidate": false,
-				"fieldTooltip": "Data type of the primary document key",
-				"fieldType": "select",
+				"propertyTooltip": "Data type of the primary document key",
+				"propertyType": "select",
 				"options": [
 					"string",
 					"number",
@@ -63,19 +63,19 @@
 				]
 			},
 			{
-				"fieldName": "Document kind",
-				"fieldKeyword": "docKind",
+				"propertyName": "Document kind",
+				"propertyKeyword": "docKind",
 				"shouldValidate": true,
-				"fieldTooltip": "When storing multiple kinds of documents in same collection, this field helps distinguish them.",
-				"fieldType": "text",
+				"propertyTooltip": "When storing multiple kinds of documents in same collection, this field helps distinguish them.",
+				"propertyType": "text",
 				"valueType": "string"
 			},
 			{
-				"fieldName": "Type",
-				"fieldKeyword": "docKindType",
+				"propertyName": "Type",
+				"propertyKeyword": "docKindType",
 				"shouldValidate": false,
-				"fieldTooltip": "Data type of the document kind key",
-				"fieldType": "select",
+				"propertyTooltip": "Data type of the document kind key",
+				"propertyType": "select",
 				"options": [
 					"string",
 					"number",
@@ -83,19 +83,19 @@
 				]
 			},
 			{
-				"fieldName": "Partition key",
-				"fieldKeyword": "partitionKey",
+				"propertyName": "Partition key",
+				"propertyKeyword": "partitionKey",
 				"shouldValidate": true,
-				"fieldTooltip": "The Partition Key is a string only used to automatically partition data among multiple servers for scalability.  Choose a JSON property name that has a wide range of values and is likely to have evenly distributed access patterns.",
-				"fieldType": "text",
+				"propertyTooltip": "The Partition Key is a string only used to automatically partition data among multiple servers for scalability.  Choose a JSON property name that has a wide range of values and is likely to have evenly distributed access patterns.",
+				"propertyType": "text",
 				"valueType": "string"
 			},
 			{
-				"fieldName": "Comments",
-				"fieldKeyword": "comments",
+				"propertyName": "Comments",
+				"propertyKeyword": "comments",
 				"shouldValidate": false,
-				"fieldTooltip": "comments",
-				"fieldType": "details",
+				"propertyTooltip": "comments",
+				"propertyType": "details",
 				"template": "textarea"
 			}
 		],
@@ -105,33 +105,33 @@
 		]
 	},
 	{
-		"modeName": "Indexes",
+		"lowerTab": "Indexes",
 		"structure": [
 			{
-				"fieldName": "Description",
-				"fieldKeyword": "indexDescription",
+				"propertyName": "Description",
+				"propertyKeyword": "indexDescription",
 				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
+				"propertyTooltip": "description",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Automatic",
-				"fieldKeyword": "automatic",
+				"propertyName": "Automatic",
+				"propertyKeyword": "automatic",
 				"shouldValidate": false,
-				"fieldTooltip": "Indexing mode: consistent, lazy, or none",
-				"fieldType": "select",
+				"propertyTooltip": "Indexing mode: consistent, lazy, or none",
+				"propertyType": "select",
 				"options": [
 					"true",
 					"false"
 				]
 			},
 			{
-				"fieldName": "Mode",
-				"fieldKeyword": "mode",
+				"propertyName": "Mode",
+				"propertyKeyword": "mode",
 				"shouldValidate": false,
-				"fieldTooltip": "Indexing mode: consistent, lazy, or none",
-				"fieldType": "select",
+				"propertyTooltip": "Indexing mode: consistent, lazy, or none",
+				"propertyType": "select",
 				"options": [
 					"Consistent",
 					"Lazy",
@@ -139,19 +139,19 @@
 				]
 			},
 			{
-				"fieldName": "Included path",
-				"fieldKeyword": "indexIncludedPath",
+				"propertyName": "Included path",
+				"propertyKeyword": "indexIncludedPath",
 				"shouldValidate": false,
-				"fieldTooltip": "Included path index expression",
-				"fieldType": "details",
+				"propertyTooltip": "Included path index expression",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Kind",
-				"fieldKeyword": "kind",
+				"propertyName": "Kind",
+				"propertyKeyword": "kind",
 				"shouldValidate": false,
-				"fieldTooltip": "Index kind: Hash (equality queries), Range (equality, range or Order By queries), or Spatial (spatial queries)",
-				"fieldType": "select",
+				"propertyTooltip": "Index kind: Hash (equality queries), Range (equality, range or Order By queries), or Spatial (spatial queries)",
+				"propertyType": "select",
 				"options": [
 					"Hash",
 					"Range",
@@ -159,11 +159,11 @@
 				]
 			},
 			{
-				"fieldName": "Data type",
-				"fieldKeyword": "dataType",
+				"propertyName": "Data type",
+				"propertyKeyword": "dataType",
 				"shouldValidate": false,
-				"fieldTooltip": "Data type: String, Number, Point, Polygon, or LineString (can contain only one entry per data type per path)",
-				"fieldType": "select",
+				"propertyTooltip": "Data type: String, Number, Point, Polygon, or LineString (can contain only one entry per data type per path)",
+				"propertyType": "select",
 				"options": [
 					"String",
 					"Number",
@@ -173,145 +173,145 @@
 				]
 			},
 			{
-				"fieldName": "Precision",
-				"fieldKeyword": "indexPrecision",
+				"propertyName": "Precision",
+				"propertyKeyword": "indexPrecision",
 				"shouldValidate": false,
-				"fieldTooltip": "1-8 or -1 (Maximum precision) for numbers, 1-100 (Maximum precision) for string",
-				"fieldType": "text"
+				"propertyTooltip": "1-8 or -1 (Maximum precision) for numbers, 1-100 (Maximum precision) for string",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Excluded path",
-				"fieldKeyword": "indexExcludedPath",
+				"propertyName": "Excluded path",
+				"propertyKeyword": "indexExcludedPath",
 				"shouldValidate": false,
-				"fieldTooltip": "Excluded path index expression",
-				"fieldType": "details",
+				"propertyTooltip": "Excluded path index expression",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Comments",
-				"fieldKeyword": "indexComments",
+				"propertyName": "Comments",
+				"propertyKeyword": "indexComments",
 				"shouldValidate": false,
-				"fieldTooltip": "comments",
-				"fieldType": "details",
-				"template": "textarea"
-			}
-		]
-	},
-	{
-		"modeName": "Stored Procs",
-		"structure": [
-			{
-				"fieldName": "Id",
-				"fieldKeyword": "storedProcID",
-				"shouldValidate": false,
-				"fieldTooltip": "Stored procedure unique name",
-				"fieldType": "text"
-			},
-			{
-				"fieldName": "Description",
-				"fieldKeyword": "storedProcDescription",
-				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
-				"template": "textarea"
-			},
-			{
-				"fieldName": "Function",
-				"fieldKeyword": "storedProcFunction",
-				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
-				"template": "textarea"
-			},
-			{
-				"fieldName": "Comments",
-				"fieldKeyword": "storedProcComments",
-				"shouldValidate": false,
-				"fieldTooltip": "comments",
-				"fieldType": "details",
+				"propertyTooltip": "comments",
+				"propertyType": "details",
 				"template": "textarea"
 			}
 		]
 	},
 	{
-		"modeName": "Triggers",
+		"lowerTab": "Stored Procs",
 		"structure": [
 			{
-				"fieldName": "Id",
-				"fieldKeyword": "triggerID",
+				"propertyName": "Id",
+				"propertyKeyword": "storedProcID",
 				"shouldValidate": false,
-				"fieldTooltip": "Stored procedure unique name",
-				"fieldType": "text"
+				"propertyTooltip": "Stored procedure unique name",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Description",
-				"fieldKeyword": "triggerDescription",
+				"propertyName": "Description",
+				"propertyKeyword": "storedProcDescription",
 				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
+				"propertyTooltip": "description",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Function",
-				"fieldKeyword": "triggerFunction",
+				"propertyName": "Function",
+				"propertyKeyword": "storedProcFunction",
 				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
+				"propertyTooltip": "description",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Pre/Post",
-				"fieldKeyword": "prePostTrigger",
+				"propertyName": "Comments",
+				"propertyKeyword": "storedProcComments",
 				"shouldValidate": false,
-				"fieldTooltip": "Choose whether pre- or post-trigger",
-				"fieldType": "select",
+				"propertyTooltip": "comments",
+				"propertyType": "details",
+				"template": "textarea"
+			}
+		]
+	},
+	{
+		"lowerTab": "Triggers",
+		"structure": [
+			{
+				"propertyName": "Id",
+				"propertyKeyword": "triggerID",
+				"shouldValidate": false,
+				"propertyTooltip": "Stored procedure unique name",
+				"propertyType": "text"
+			},
+			{
+				"propertyName": "Description",
+				"propertyKeyword": "triggerDescription",
+				"shouldValidate": false,
+				"propertyTooltip": "description",
+				"propertyType": "details",
+				"template": "textarea"
+			},
+			{
+				"propertyName": "Function",
+				"propertyKeyword": "triggerFunction",
+				"shouldValidate": false,
+				"propertyTooltip": "description",
+				"propertyType": "details",
+				"template": "textarea"
+			},
+			{
+				"propertyName": "Pre/Post",
+				"propertyKeyword": "prePostTrigger",
+				"shouldValidate": false,
+				"propertyTooltip": "Choose whether pre- or post-trigger",
+				"propertyType": "select",
 				"options": [
 					"Pre-Trigger",
 					"Post-Trigger"
 				]
 			},
 			{
-				"fieldName": "Comments",
-				"fieldKeyword": "triggerComments",
+				"propertyName": "Comments",
+				"propertyKeyword": "triggerComments",
 				"shouldValidate": false,
-				"fieldTooltip": "comments",
-				"fieldType": "details",
+				"propertyTooltip": "comments",
+				"propertyType": "details",
 				"template": "textarea"
 			}
 		]
 	},
 	{
-		"modeName": "UDFs",
+		"lowerTab": "UDFs",
 		"structure": [
 			{
-				"fieldName": "Id",
-				"fieldKeyword": "udfID",
+				"propertyName": "Id",
+				"propertyKeyword": "udfID",
 				"shouldValidate": false,
-				"fieldTooltip": "Stored procedure unique name",
-				"fieldType": "text"
+				"propertyTooltip": "Stored procedure unique name",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Description",
-				"fieldKeyword": "udfDescription",
+				"propertyName": "Description",
+				"propertyKeyword": "udfDescription",
 				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
+				"propertyTooltip": "description",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Function",
-				"fieldKeyword": "udfFunction",
+				"propertyName": "Function",
+				"propertyKeyword": "udfFunction",
 				"shouldValidate": false,
-				"fieldTooltip": "description",
-				"fieldType": "details",
+				"propertyTooltip": "description",
+				"propertyType": "details",
 				"template": "textarea"
 			},
 			{
-				"fieldName": "Comments",
-				"fieldKeyword": "udfComments",
+				"propertyName": "Comments",
+				"propertyKeyword": "udfComments",
 				"shouldValidate": false,
-				"fieldTooltip": "comments",
-				"fieldType": "details",
+				"propertyTooltip": "comments",
+				"propertyType": "details",
 				"template": "textarea"
 			}
 		]

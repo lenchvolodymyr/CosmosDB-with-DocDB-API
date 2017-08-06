@@ -1,60 +1,61 @@
 [
 	{
-		"modeName": "Details",
+		"lowerTab": "Details",
 		"structure": [
 			{
-				"fieldName": "DB vendor",
-				"fieldKeyword": "dbVendor",
+				"propertyName": "DB vendor",
+				"propertyKeyword": "dbVendor",
 				"shouldValidate": false,
-				"fieldTooltip": "db vendor",
-				"fieldType": "select",
+				"propertyTooltip": "db vendor",
+				"propertyType": "select",
 				"options": [
 					"CosmosDB"
 				],
 				"disabledOption": true
 			},
 			{
-				"fieldName": "Tenant",
-				"fieldKeyword": "tenant",
+				"propertyName": "Tenant",
+				"propertyKeyword": "tenant",
 				"shouldValidate": false,
-				"fieldTooltip": "Azure tenant",
-				"fieldType": "text"
+				"propertyTooltip": "Azure tenant",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Account ID",
-				"fieldKeyword": "accountID",
+				"propertyName": "Account ID",
+				"propertyKeyword": "accountID",
 				"shouldValidate": false,
-				"fieldTooltip": "Azure CosmosDB account ID",
-				"fieldType": "text"
+				"propertyTooltip": "Azure CosmosDB account ID",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Resource group",
-				"fieldKeyword": "resGrp",
+				"propertyName": "Resource group",
+				"propertyKeyword": "resGrp",
 				"shouldValidate": false,
-				"fieldTooltip": "Resource Group",
-				"fieldType": "text"
+				"propertyTooltip": "Resource Group",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Subscription",
-				"fieldKeyword": "subscription",
+				"propertyName": "Subscription",
+				"propertyKeyword": "subscription",
 				"shouldValidate": false,
-				"fieldTooltip": "Subscription",
-				"fieldType": "text"
+				"propertyTooltip": "Subscription",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Database ID",
-				"fieldKeyword": "dbId",
+				"propertyName": "Database ID",
+				"propertyKeyword": "dbId",
 				"shouldValidate": false,
-				"fieldTooltip": "A database is a logical container of one or more collections",
-				"fieldType": "text"
+				"propertyTooltip": "A database is a logical container of one or more collections",
+				"propertyType": "text"
 			},
 			{
-				"fieldName": "Preferred location",
-				"fieldKeyword": "preferredLocation",
+				"propertyName": "Preferred location",
+				"propertyKeyword": "preferredLocation",
 				"shouldValidate": false,
-				"fieldTooltip": "Default experience",
-				"fieldType": "select",
+				"propertyTooltip": "Default experience",
+				"propertyType": "select",
 				"options": [
+					"",
 					"West US", 
 					"West Central US", 
 					"West US 2", 
@@ -90,11 +91,11 @@
 				],
 				"disabledOption": false
 			},			{
-				"fieldName": "API Experience",
-				"fieldKeyword": "apiExperience",
+				"propertyName": "API Experience",
+				"propertyKeyword": "apiExperience",
 				"shouldValidate": false,
-				"fieldTooltip": "Default experience",
-				"fieldType": "select",
+				"propertyTooltip": "Default experience",
+				"propertyType": "select",
 				"options": [
 					"DocumentDB SQL",
 					"MongoDB"
@@ -102,11 +103,11 @@
 				"disabledOption": false
 			},
 			{
-				"fieldName": "Default consistency policy",
-				"fieldKeyword": "defaultConsistency",
+				"propertyName": "Default consistency policy",
+				"propertyKeyword": "defaultConsistency",
 				"shouldValidate": false,
-				"fieldTooltip": "Default consistency policy level",
-				"fieldType": "select",
+				"propertyTooltip": "Default consistency policy level",
+				"propertyType": "select",
 				"options": [
 					"Session",
 					"Strong",
@@ -117,11 +118,11 @@
 				"disabledOption": false
 			},
 			{
-				"fieldName": "Comments",
-				"fieldKeyword": "comments",
+				"propertyName": "Comments",
+				"propertyKeyword": "comments",
 				"shouldValidate": false,
-				"fieldTooltip": "comments",
-				"fieldType": "details",
+				"propertyTooltip": "comments",
+				"propertyType": "details",
 				"template": "textarea"
 			}
 		]
