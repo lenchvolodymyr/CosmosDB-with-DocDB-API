@@ -1,0 +1,38 @@
+[
+	{
+		"lowerTab": "Connection",
+		"structure": [
+			{
+				"inputLabel": "Disable SSl Authentication",
+				"inputKeyword": "disableSSL",
+				"inputType": "checkbox",
+				"inputTooltip": "Disable SSl Authentication for local instance"
+			},
+			{
+				"inputLabel": "Name",
+				"inputKeyword": "name",
+				"inputType": "text",
+				"inputPlaceholder": "Name"
+				
+			},
+			{
+				"inputLabel": "Host",
+				"inputKeyword": "host",
+				"inputType": "text",
+				"inputPlaceholder": "localhost"
+			},
+			{
+				"inputLabel": "Port",
+				"inputKeyword": "port",
+				"inputType": "text",
+				"inputPlaceholder": "443"
+			},
+			{
+				"inputLabel": "AccountKey",
+				"inputKeyword": "accountKey",
+				"inputType": "password",
+				"inputTooltip": "Account Key"
+			}
+		]
+	}
+]

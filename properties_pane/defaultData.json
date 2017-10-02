@@ -30,5 +30,40 @@
 	"view": {
 		"viewOn": "",
 		"pipeline": ""
+	},
+	"indexes": {
+		"name": "New Index",
+		"indexDescription": "",
+		"automatic": false,
+		"mode": "Consistent",
+		"indexIncludedPath": "",
+		"kind": "Hash",
+		"dataType": "String",
+		"indexPrecision": "",
+		"indexExcludedPath": "",
+		"indexComments": ""
+	},
+	"storedProcs": {
+		"name": "New Stored Procs",
+		"storedProcID": "",
+		"storedProcDescription": "",
+		"storedProcFunction": "",
+		"storedProcComments": ""
+	},
+	"triggers": {
+		"name": "New Trigger",
+		"triggerID": "",
+		"triggerDescription": "",
+		"prePostTrigger": "Pre-Trigger",
+		"triggerOperation": "All",
+		"triggerFunction": "",
+		"triggerComments": ""
+	},
+	"udfs": {
+		"name": "New UDF",
+		"udfID": "",
+		"udfDescription": "",
+		"udfFunction": "",
+		"udfComments": ""
 	}
 }

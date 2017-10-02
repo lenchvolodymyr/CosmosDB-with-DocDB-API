@@ -17,7 +17,8 @@
 				"shouldValidate": false,
 				"propertyTooltip": "comments",
 				"propertyType": "details",
-				"template": "textarea"
+				"template": "textarea",
+				"valueType": "string"
 			}
 		]
 	}

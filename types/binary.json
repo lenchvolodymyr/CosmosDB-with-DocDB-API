@@ -1,16 +1,19 @@
 {
-	"name": "null",
-	"erdAbbreviation": "<null>",
-	"dtdAbbreviation": "{null}",
+	"name": "binary",
+	"erdAbbreviation": "<bin>",
+	"dtdAbbreviation": "{BIN}",
 	"useSample": false,
 	"defaultValues": {
-		"type": "null",
+		"type": "binary",
 		"primaryKey": false,
 		"relationshipType": "",
 		"parentRelationship": "",
 		"childRelationships": [],
 		"foreignEntity": "",
 		"foreignField": [],
-		"format": ""
+		"default": "",
+		"gridFS": "",
+		"enum": [],
+		"sample": ""
 	}
 }
