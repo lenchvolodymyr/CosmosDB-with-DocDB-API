@@ -3,10 +3,10 @@
 		"lowerTab": "Connection",
 		"structure": [
 			{
-				"inputLabel": "Disable SSl Authentication",
+				"inputLabel": "Disable SSL Authentication for local instance",
 				"inputKeyword": "disableSSL",
 				"inputType": "checkbox",
-				"inputTooltip": "Disable SSl Authentication for local instance"
+				"inputTooltip": "Check this box if you have a local instance of DocumentDB"
 			},
 			{
 				"inputLabel": "Name",
