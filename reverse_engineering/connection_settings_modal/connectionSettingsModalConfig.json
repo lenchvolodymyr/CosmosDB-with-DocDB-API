@@ -18,20 +18,20 @@
 			{
 				"inputLabel": "Host",
 				"inputKeyword": "host",
-				"inputType": "text",
-				"inputPlaceholder": "localhost"
+				"inputType": "text"
 			},
 			{
 				"inputLabel": "Port",
 				"inputKeyword": "port",
-				"inputType": "text",
-				"inputPlaceholder": "443"
+				"inputType": "text"
 			},
 			{
 				"inputLabel": "AccountKey",
 				"inputKeyword": "accountKey",
-				"inputType": "password",
-				"inputTooltip": "Account Key"
+				"inputType": "text",
+				"inputTooltip": "Account Key",
+				"isHiddenKey": true,
+				"defaultValue": ""
 			}
 		]
 	}

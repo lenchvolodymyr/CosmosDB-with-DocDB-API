@@ -72,28 +72,37 @@ module.exports = {
 						logger.log('collections list', collections, 'Mapped collection list');
 						async.map(collections, (collectionItem, collItemCallback) => {
 							readCollectionById(database.id, collectionItem.id, (err, collection) => {
+								let amount = 1000;
 								if(err){
 									console.log(err);
 									logger.log('error', err);
 								} else {
-									let size = getSampleDocSize(1000, connectionInfo.recordSamplingSettings) || 1000;
-									logger.log('info', { collectionItem: collectionItem }, 'Getting documents for current collectionItem', connectionInfo.hiddenKeys);
-
-									listDocuments(collection._self, size, (err, documents) => {
+									documentsAmount(collection._self, (err, result) => {
 										if(err){
-											console.log(err);
-											logger.log('error', err);
+											// console.log(err);
+											// logger.log('error', err);
+											// return collItemCallback(err, null);
 										} else {
-											documents  = filterDocuments(documents);
-
-											let inferSchema = generateCustomInferSchema(collectionItem.id, documents, { sampleSize: 20 });
-											logger.log('info', inferSchema, 'Schema inference', connectionInfo.hiddenKeys);
-
-											let documentsPackage = getDocumentKindDataFromInfer({ bucketName: collectionItem.id,
-												inference: inferSchema, isCustomInfer: true, excludeDocKind: connectionInfo.excludeDocKind }, 90);
-
-											return collItemCallback(err, documentsPackage);
+											amount = result[0].$1;
 										}
+										let size = getSampleDocSize(amount, connectionInfo.recordSamplingSettings) || 1000;
+										logger.log('info', { collectionItem: collectionItem }, 'Getting documents for current collectionItem', connectionInfo.hiddenKeys);
+
+										listDocuments(collection._self, size, (err, documents) => {
+											if(err){
+												console.log(err);
+												logger.log('error', err);
+												return collItemCallback(err, null);
+											} else {
+												documents  = filterDocuments(documents);
+
+												let inferSchema = generateCustomInferSchema(collectionItem.id, documents, { sampleSize: 20 });
+												let documentsPackage = getDocumentKindDataFromInfer({ bucketName: collectionItem.id,
+													inference: inferSchema, isCustomInfer: true, excludeDocKind: connectionInfo.excludeDocKind }, 90);
+
+												return collItemCallback(err, documentsPackage);
+											}
+										});
 									});
 								}
 							});
@@ -144,7 +153,6 @@ module.exports = {
 		let { recordSamplingSettings, fieldInference } = data;
 		logger.log('info', getSamplingInfo(recordSamplingSettings, fieldInference), 'Reverse-Engineering sampling params', data.hiddenKeys);
 
-		let size = getSampleDocSize(1000, recordSamplingSettings) || 1000;
 		let bucketList = data.collectionData.dataBaseNames;
 
 		logger.log('info', { CollectionList: bucketList }, 'Selected collection list', data.hiddenKeys);
@@ -190,59 +198,72 @@ module.exports = {
 
 		 									let indexes = getIndexes(collection.indexingPolicy);
 
-											listDocuments(collection._self, size, (err, documents) => {
-												if(err){
-													console.log(err);
-													logger.log('error', err);
-													return collItemCallback(err);
-												} else {
-													documents = filterDocuments(documents);
-													let documentKindName = data.documentKinds[collection.id].documentKindName || '*';
-													let docKindsList = data.collectionData.collections[bucketName];
-													let collectionPackages = [];
+		 									let amount = 1000;
+		 									documentsAmount(collection._self, (err, result) => {
+		 										if(err){
+		 											// console.log(err);
+		 											// logger.log('error', err);
+		 											// return collItemCallback(err, null);
+		 										} else {
+		 											amount = result[0].$1;
+		 										}
+	 											let size = getSampleDocSize(amount, recordSamplingSettings) || 1000;
 
-													if(documentKindName !== '*'){
-														if(!docKindsList){
-															let documentsPackage = {
-																dbName: bucketName,
-																emptyBucket: true,
-																indexes: [],
-																bucketIndexes: indexes,
-																views: [],
-																validation: false,
-																bucketInfo
-															};
-															collectionPackages.push(documentsPackage)
-														} else {
-															docKindsList.forEach(docKindItem => {
-																let newArrayDocuments = documents.filter((item) => {
-																	return item[documentKindName] === docKindItem;
-																});
+												listDocuments(collection._self, size, (err, documents) => {
+													if(err){
+														console.log(err);
+														logger.log('error', err);
+														return collItemCallback(err);
+													} else {
+														documents = filterDocuments(documents);
+														let documentKindName = data.documentKinds[collection.id].documentKindName || '*';
+														let docKindsList = data.collectionData.collections[bucketName];
+														let collectionPackages = [];
 
+														if(documentKindName !== '*'){
+															if(!docKindsList){
 																let documentsPackage = {
 																	dbName: bucketName,
-																	collectionName: docKindItem,
-																	documents: newArrayDocuments || [],
+																	emptyBucket: true,
 																	indexes: [],
 																	bucketIndexes: indexes,
 																	views: [],
 																	validation: false,
-																	docType: documentKindName,
 																	bucketInfo
 																};
-
-																if(fieldInference.active === 'field'){
-																	documentsPackage.documentTemplate = documents[0] || null;
-																}
-
 																collectionPackages.push(documentsPackage)
-															});
-														}
-													}
+															} else {
+																docKindsList.forEach(docKindItem => {
+																	let newArrayDocuments = documents.filter((item) => {
+																		return item[documentKindName] === docKindItem;
+																	});
 
-													return collItemCallback(err, collectionPackages);
-												}
-											});
+																	let documentsPackage = {
+																		dbName: bucketName,
+																		collectionName: docKindItem,
+																		documents: newArrayDocuments || [],
+																		indexes: [],
+																		bucketIndexes: indexes,
+																		views: [],
+																		validation: false,
+																		docType: documentKindName,
+																		bucketInfo
+																	};
+
+																	if(fieldInference.active === 'field'){
+																		documentsPackage.documentTemplate = documents[0] || null;
+																	}
+
+																	collectionPackages.push(documentsPackage)
+																});
+															}
+														}
+
+														return collItemCallback(err, collectionPackages);
+													}
+												});
+		 									});
+
 										}
 									})
 								}
@@ -328,7 +349,25 @@ function readDatabaseById(databaseId, callback) {
 }
 
 function listDocuments(collLink, maxItemCount, callback) {
-	var queryIterator = client.readDocuments(collLink, { maxItemCount }).toArray(function (err, docs) {
+	const query = {
+		"query": `SELECT TOP ${maxItemCount} * FROM c`
+	};
+
+	var queryIterator = client.queryDocuments(collLink, query, { enableCrossPartitionQuery: true }).toArray(function (err, docs) {
+		if (err) {
+			return callback(err);
+		} else {
+			return callback(null, docs);
+		}
+	});
+}
+
+function documentsAmount(collLink, callback) {
+	const query = {
+			"query": `SELECT COUNT(1) FROM c`
+	};
+
+	var queryIterator = client.queryDocuments(collLink, query, { enableCrossPartitionQuery: true }).toArray(function (err, docs) {
 		if (err) {
 			return callback(err);
 		} else {
@@ -434,8 +473,6 @@ function getDocumentKindDataFromInfer(data, probability){
 }
 
 function handleBucket(connectionInfo, collectionNames, database, dbItemCallback){
-	let size = getSampleDocSize(1000, connectionInfo.recordSamplingSettings) || 1000;
-
 	async.map(collectionNames, (collectionName, collItemCallback) => {
 		readCollectionById(database.id, collectionName, (err, collection) => {
 			if(err){
@@ -443,26 +480,38 @@ function handleBucket(connectionInfo, collectionNames, database, dbItemCallback)
 				logger.log('error', err);
 				collItemCallback(err);
 			} else {
-				listDocuments(collection._self, size, (err, documents) => {
+				let amount = 1000;
+				documentsAmount(collection._self, (err, result) => {
 					if(err){
-						console.log(err);
-						return collItemCallback(err);
+						// console.log(err);
+						// logger.log('error', err);
+						// return collItemCallback(err, null);
 					} else {
-						documents  = filterDocuments(documents);
-						let documentKind = connectionInfo.documentKinds[collection.id].documentKindName || '*';
-						let documentTypes = [];
-
-						if(documentKind !== '*'){
-							documentTypes = documents.map(function(doc){
-								return doc[documentKind];
-							});
-							documentTypes = documentTypes.filter((item) => Boolean(item));
-							documentTypes = _.uniq(documentTypes);
-						}
-
-						let dataItem = prepareConnectionDataItem(documentTypes, collection.id, database);
-						return collItemCallback(err, dataItem);
+						amount = result[0].$1;
 					}
+					let size = getSampleDocSize(amount, connectionInfo.recordSamplingSettings) || 1000;
+
+					listDocuments(collection._self, size, (err, documents) => {
+						if(err){
+							console.log(err);
+							return collItemCallback(err);
+						} else {
+							documents  = filterDocuments(documents);
+							let documentKind = connectionInfo.documentKinds[collection.id].documentKindName || '*';
+							let documentTypes = [];
+
+							if(documentKind !== '*'){
+								documentTypes = documents.map(function(doc){
+									return doc[documentKind];
+								});
+								documentTypes = documentTypes.filter((item) => Boolean(item));
+								documentTypes = _.uniq(documentTypes);
+							}
+
+							let dataItem = prepareConnectionDataItem(documentTypes, collection.id, database);
+							return collItemCallback(err, dataItem);
+						}
+					});
 				});
 			}
 		});
