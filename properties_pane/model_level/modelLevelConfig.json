@@ -152,7 +152,8 @@ making sure that you maintain a proper JSON format.
 				"propertyTooltip": "Default experience",
 				"propertyType": "select",
 				"options": [
-					"DocumentDB SQL"
+					"DocumentDB SQL",
+					"Mongo API"
 				],
 				"disabledOption": false
 			},

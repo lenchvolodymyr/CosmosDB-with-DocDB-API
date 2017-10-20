@@ -11,7 +11,8 @@
 	"model": {
 		"modelName": "New model",
 		"dbVersion": "",
-		"dbVendor": "CosmosDB"
+		"dbVendor": "CosmosDB",
+		"apiExperience": "DocumentDB SQL"
 	},
 	"container": {
 		"name": "New collection",
