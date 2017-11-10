@@ -235,7 +235,7 @@ module.exports = {
 															} else {
 																docKindsList.forEach(docKindItem => {
 																	let newArrayDocuments = documents.filter((item) => {
-																		return item[documentKindName] === docKindItem;
+																		return item[documentKindName] == docKindItem;
 																	});
 
 																	let documentsPackage = {
@@ -251,12 +251,30 @@ module.exports = {
 																	};
 
 																	if(fieldInference.active === 'field'){
-																		documentsPackage.documentTemplate = documents[0] || null;
+																		documentsPackage.documentTemplate = newArrayDocuments[0] || null;
 																	}
 
 																	collectionPackages.push(documentsPackage)
 																});
 															}
+														} else {
+															let documentsPackage = {
+																dbName: bucketName,
+																collectionName: bucketName,
+																documents: documents || [],
+																indexes: [],
+																bucketIndexes: indexes,
+																views: [],
+																validation: false,
+																docType: bucketName,
+																bucketInfo
+															};
+
+															if(fieldInference.active === 'field'){
+																documentsPackage.documentTemplate = documents[0] || null;
+															}
+
+															collectionPackages.push(documentsPackage)
 														}
 
 														return collItemCallback(err, collectionPackages);
