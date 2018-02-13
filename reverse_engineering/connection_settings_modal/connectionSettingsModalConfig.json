@@ -29,7 +29,7 @@
 				"inputKeyword": "host",
 				"inputType": "text",
 				"inputTooltip": "Specify host IP address or DNS name of the DocumentDB instance",
-				"inputPlaceholder": "https://<databaseaccount>.documents.azure.com or localhost"
+				"inputPlaceholder": "https://<databaseaccount>.documents.azure.com or https://localhost"
 			},
 			{
 				"inputLabel": "Port",
