@@ -15,7 +15,8 @@
 			]
 		},
 		"features": {
-			"nestedCollections": false
+			"nestedCollections": false,
+			"enableReverseEngineering": true
 		}
 	},
 	"description": "Hackolade plugin for Azure Cosmos DB with DocumentDB API"
